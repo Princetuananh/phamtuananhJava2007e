@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Bai Tap 4</title>
+</head>
+<style type="text/css">
+	.menu{
+		text-align: center;
+	}
+	.menu li{
+		background-color: pink;
+		border: 2px solid blue;
+		width: 300px;
+		height: 50px;
+		text-align: center;
+		display: inline-block;
+		margin-left: -5px;
+		margin-top: -3px;
+		line-height: 40px;
+		position: relative;
+
+	}
+	.menu li:hover{
+		background-color: white;
+
+	}
+	.nam{
+		display: none;
+		position: absolute;
+	}
+	.nam li{
+		margin-left: -42px;
+		top: 12px;
+
+	}
+	.menu li:hover .nam{
+		display: block;
+	}
+	.dongho{
+		display: none;
+		position: absolute;
+	}
+	.dongho li{
+		margin-left: 55px;
+		top: 0px;
+	}
+	.nam li:hover .dongho{
+		display: inline-block;
+	}
+</style>
+<body>
+<div class="menu">
+	<ul>
+		<li>Trang chủ</li>
+		<li>Trang phục nam
+			<ul class="nam">
+				<li>Áo cộc tay</li>
+				<li>Quần Jean</li>
+				<li>Đồng hồ đeo tay
+					<ul class="dongho">
+						<li>Đồng hồ Casio</li>
+						<li>Đồng hồ Rolex</li>
+						<li>Đồng hồ Omega</li>
+					</ul>
+				</li>
+			</ul>
+		</li>
+		<li>Trang phục nữ</li>
+		<li>Trang phục trẻ em</li>
+	</ul>
+	
+</div>
+</body>
+</html>
