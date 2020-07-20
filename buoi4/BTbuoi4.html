@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Giao diện web (BT buổi 4)</title>
+</head>
+<style type="text/css">
+    .banner img{
+    	padding-top: 20px;
+    	padding-left: 100px;
+    	margin-right: auto;
+    	margin-left: auto;
+    }
+    .header{
+    	display: block;
+    }
+    .menu {
+    	width: 100%;
+    	height: 50px;
+    	background-color: #2248E1; 
+    }
+    .menu ul{
+    	margin-left: 100px;
+    }
+
+    .menu li{
+    	float: left;
+    	position: relative;
+    	border: 0px solid black;
+  	    color: white;
+  	    line-height: 50px;
+		padding: 0px;
+		margin-left: 20px;
+		list-style: none;
+		box-sizing: border-box;
+		
+    }
+    .menu ul li a{
+    	display: inline-block;
+    	text-transform: uppercase;
+    	color: white;
+    	text-decoration: none;
+    	transition: all .3s;
+    }
+    .menu li:hover{
+    	background-color: red;
+    }
+    .menu .jquery{
+		display: none;
+		position: absolute;
+		width: 150px;
+	}
+	.menu .jquery li{
+        margin-left: -141px;
+		top: 0px;
+		width: 230px;
+		background-color: pink;
+		padding-left: 40px;
+	}
+	.menu li:hover .jquery{
+		display: block;
+	}
+	.menu .jquery li:hover{
+		background-color: red;
+	}
+    .main .slide{
+    	display: block;
+    }
+    .content{
+    	padding-right: 15px;
+        padding-left: 15px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .content::before{
+        display: table;
+        content: "";
+    }
+
+    .hang{
+    	margin-right: -15px;
+        margin-left: -15px;
+    }
+    .hang::before{
+        display: table;
+        content: "";
+    }
+    .left{
+    	width: 60%;
+    	float: left;
+    	position: relative;
+        min-height: 1px;
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+    .content .hang .left .noibat div img{
+    	width: 100%;
+        margin-bottom: 10px
+    }
+    .content .hang .left .noibat h4:hover{
+    	color: red;
+    }
+    .content .hang .left .noibat h4 a:hover{
+    	color: red;
+    }
+    .content .hang .left .noibat h4 a{
+    	font-size: 22px;
+        color: #286090;
+        text-decoration: none;
+    }
+    .content .hang .left .noibat .meta{
+    	margin-right: 10px;
+        font-size: 13px;
+        color: #888;
+    }
+    .content .hang .left .noibat p{
+    	font-size: 15px;
+        color: #333;
+        line-height: 23px;
+        margin-bottom: 10px;
+    }
+    .listnb{
+    	margin-bottom: 20px;
+    }
+    .top .left .hang{
+        width: 60%;
+        float: left;
+    	position: relative;
+        min-height: 1px;
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+    .editpost{
+    	width: 33.33%;
+    	float: left;
+    }
+    .listnb h4{
+    	color: #337ab7;
+    	font-size: 18px;
+    }
+    .postnew h4 a:hover{
+        color: red;
+    }
+    .titlenew h2{
+    	text-transform: uppercase;
+        font-size: 25px;
+        color: black;
+        font-weight: 600;
+    }
+    .contentnew{
+    	display: block;
+    }
+    .news{
+    	margin-bottom: 25px;
+        padding-bottom: 25px;
+        border-bottom: 1px solid #ededed
+    }
+    .meta span{
+    	margin-right: 10px;
+        font-size: 13px;
+        color: #888;
+    }
+    .news a{
+    	text-decoration: none;
+    }
+    .news img{
+    	float: left;
+        margin-right: 10px;
+        max-width: 100%;
+    }
+    .info{
+    	display: block;
+    }
+    .info h4{
+    	font-size: 18px;
+    }
+    .info h4 a{
+    	font-size: 22px;
+        color: #286090;
+        text-decoration: none;
+    }
+    .news p{
+	   font-size: 15px;
+       line-height: 22px;
+    }
+    .clear{
+    	clear: both;
+    }
+    .nextpost{
+    	text-align: center;
+        margin-bottom: 30px;
+    }
+    .nextpost a{
+    	display: inline-block;
+        padding: 5px 10px;
+    }
+    .nextpost a:hover{
+    	color: red;
+    }
+    .content .hang .right{
+    	width: 30%;
+    	float: left;
+    	position: relative;
+        min-height: 1px;
+        padding-right: 15px;
+        padding-left: 15px;
+    }   
+    .right::after{
+    	clear: both;
+    	display: table;
+    	content: "";
+    }
+    .right .cacmuc{
+    	margin-bottom: 30px;
+    }
+    .right .cacmuc h3{
+    	background: #286090;
+        color: white;
+        font-size: 15px;
+        text-transform: uppercase;
+        padding: 10px;
+        font-weight: 600;
+        margin-bottom: 0px;
+    }
+    .right .cacmuc ul li{
+       list-style: none;
+       padding: 0px;
+       margin: 0px;
+    }
+    .right .cacmuc ul li a{
+      	color: #4e4e4e;
+        font-weight: 500;
+        font-size: 18px;
+    }
+    .right .cacmuc .nd-cm ul li{
+	    padding: 8px 20px;
+    }
+    .right .cacmuc .nd-cm ul li a:hover{
+    	color: red;
+    }
+    .right .cacmuc .nd-new{
+    	border: 1px solid #ededed;
+    }
+    
+    .right .cacmuc .nd-new ul li img{
+    	float: left;
+    	margin-right: 10px;
+    }
+    .right .cacmuc .nd-new ul li{
+    	margin-bottom: 10px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #ededed;
+    }
+    .right .cacmuc .nd-new ul li a:hover{
+    	color: red;
+    }
+    .cacmuc .nd-xn ul li{
+    	padding-bottom: 10px;
+        margin-bottom: 10px;
+        border-bottom: 1px solid #ededed;
+    }
+    .cacmuc .nd-xn ul li span{
+       display: inline-block;
+       width: 35px;
+       height: 35px;
+       text-align: center;
+       line-height: 35px;
+       font-size: 15px;
+       background: #286090;
+       color: #fff;
+       border-radius: 50%;
+       float: left;
+       margin-right: 10px;
+    }
+    .cacmuc .nd-xn ul li h4 a{
+       color: black	;
+       font-size: 15px;
+       line-height: 22px;
+    }
+    .cacmuc .nd-xn ul li h4 a:hover{
+    	color: red;
+    }
+    .cacmuc .nd-bb ul li{
+    	padding: 8px 20px;
+    }
+    .cacmuc .nd-bb ul li a{
+    	color: #4e4e4e;
+        font-weight: 500;
+    }
+     .cacmuc .nd-bb ul li a:hover{
+     	color: red;
+     }
+    .footer{
+    	background: #286090;
+        color: white;
+        height: 300px;       
+        clear: both;
+        width: 100%;
+    }
+    .container{
+    	padding-right: 15px;
+        padding-left: 15px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    .footer h3{
+    	font-size: 18px;
+        text-transform: uppercase;
+        margin-bottom: 15px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid #ededed;
+    }
+    .footer p{
+    	margin: 0 0 10px;
+    }
+    .footer .nd-footer .me>a{
+    	border: 1px solid white;
+        padding: 8px 10px;
+        display: inline-block;
+        margin-top: 10px;
+    }
+    .footer .nd-footer a:hover{
+        color: red;
+    }
+    .footer .me{
+    	width: 25%;
+    	clear: both;
+		padding-left: 100px;
+		padding-top: 20px;
+		padding-right: 80px;
+		float: left;
+    }
+    .footer .chuyenmuc{
+    	width: 25%;
+    	padding-top: 20px;
+		float: left;
+		padding-right: 80px;
+    }
+    
+    .footer .nd-footer .chuyenmuc ul li{
+    	margin-bottom: 8px;
+    }
+    .footer .nd-footer .chuyenmuc ul li a{
+    	color: white;
+    }
+    .footer .nd-footer .chuyenmuc ul li a:hover{
+    	color: red;
+    }
+    .footer .thongtin{
+    	width: 25%;
+    	float: left;
+    	padding-top: 20px;
+    }
+    .copyright{
+    	padding: 10px;
+    	margin-top: -16px;
+        text-align: center;
+        background: #3289d4;
+        clear: both;
+    }
+
+</style>
+<body>
+<div class="trangweb">
+    <div class="header">
+    	<div class="banner">
+    		<div><img src="http://html.thietkeweb43.com/mywebsite/images/logo.png" style="width: 250px;height: 100px;">
+    		     <img src="https://topdev.vn/blog/wp-content/uploads/2019/07/FRONT-END_TEMP_TOPDEV_1200x628.png" style="width: 900px; height: 100px; padding-left: 50px">
+    	    </div>
+    	</div>
+    	<div class="menu">
+    		 <ul>
+			<li><a href="#" class="active">TRANG CHỦ</a></li>
+			<li><a href="">GIỚI THIỆU</a></li>
+			<li><a href="">HỌC HTML</a></li>
+			<li><a href="">HỌC CSS</a></li>
+			<li class="js"><a href="">HỌC JQUERY</a>
+				<ul class="jquery">
+					<li>HỌC VUEJS</li>
+					<li>HỌC ANGULARJS</li>
+					<li>HỌC REACTJS</li>
+				</ul>
+			</li>
+			<li><a href="">HỌC WORDPRESS</a></li>
+			<li><a href="">HỌC REACTJS</a></li>
+			<li><a href="">LIÊN HỆ</a></li>
+		     </ul>
+    	</div>
+    </div>
+	<div class="main">
+		<div class="slide">
+			<img src="https://www.upsieutoc.com/images/2020/04/26/hoc-lap-trinh-tu-dau.jpg" style="width: 1503px; height: 400px">
+			
+		</div>
+		<div class="content">
+			<div class="hang">
+				<div class="left">
+				 <div class="noibat">
+				   <h2 class="title">BÀI VIẾT NỔI BẬT</h2>
+				   <div><img src="https://giuseart.com/wp-content/uploads/2017/02/h%E1%BB%8Dc-html-c%C6%A1-b%E1%BA%A3n-1.png" style="width: 800px; height: 400px"></div>
+				   <h4><a href="#">Hướng dẫn chuyển html sang wordpress khởi tạo dự án</a></h4>
+				   <div class="meta">
+					 <span>Ngày đăng: 19-07-2020</span>
+					 <span>Lượt xem: 10000 Lượt</span>
+				   </div>
+				   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum libero unde. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum libero unde laudantium sapiente atque odio at facere nemo aperiam.</p>
+				   <div class="listnb">
+				  	 <div class="editpost">
+				  	 <div class="post">
+				  	    	<img src="https://sogo.edu.vn/wp-content/uploads/2019/04/lap-trinh-web.jpg" style="width: 265px;height: 150px">
+				  		    <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h4>
+				  		    <div class="meta">19-07-2020</div>
+				  	 </div>
+				     </div>
+				     <div class="editpost">
+				  	 <div class="post">
+				  		    <img src="https://dotnetguru.org/wp-content/uploads/2019/06/tu-hoc-lap-trinh-website.png" style="width: 265px;height: 150px">
+				  		    <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h4>
+				  		    <div class="meta">19-07-2020</div>
+				  	 </div>
+				     </div>
+				     <div class="editpost">
+				  	 <div class="post">
+				  		    <img src="https://laptrinhcuocsong.com/images/web-developer-big-banner.png" style="width: 265px;height: 150px">
+				  		    <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h4>
+				  		    <div class="meta">19-07-2020</div>
+				  	 </div>
+				     </div>
+				  	
+				   </div>	
+				 </div>  	
+				<div class="postnew">
+					<h2 class="titlenew">BÀI VIẾT MỚI NHẤT</h2>
+					<div class="contentnew">
+						<div class="news">
+							<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS9iFbk451EODBCJyyFRilrQK0lrSG3l-AwYQ&usqp=CAU" style="width: 265px; height: 150px">
+							<div class="info">
+								<h4><a href="#">Bài viết mới nhất của chủ đề hướng dẫn wordpress</a></h4>
+								<div class="meta"><span>Ngày đăng: 19-07-2020</span></div>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, sapiente mollitia, dolore minus et eligendi quod perspiciatis placeat iure deleniti obcaecati blanditiis eius sit! Consectetur ullam praesentium deserunt ratione hic.</p>
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div class="news">
+							<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS9iFbk451EODBCJyyFRilrQK0lrSG3l-AwYQ&usqp=CAU" style="width: 265px; height: 150px">
+							<div class="info">
+								<h4><a href="#">Bài viết mới nhất của chủ đề hướng dẫn wordpress</a></h4>
+								<div class="meta"><span>Ngày đăng: 19-07-2020</span></div>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, sapiente mollitia, dolore minus et eligendi quod perspiciatis placeat iure deleniti obcaecati blanditiis eius sit! Consectetur ullam praesentium deserunt ratione hic.</p>
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div class="news">
+							<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS9iFbk451EODBCJyyFRilrQK0lrSG3l-AwYQ&usqp=CAU" style="width: 265px; height: 150px">
+							<div class="info">
+								<h4><a href="#">Bài viết mới nhất của chủ đề hướng dẫn wordpress</a></h4>
+								<div class="meta"><span>Ngày đăng: 19-07-2020</span></div>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, sapiente mollitia, dolore minus et eligendi quod perspiciatis placeat iure deleniti obcaecati blanditiis eius sit! Consectetur ullam praesentium deserunt ratione hic.</p>
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div class="news">
+							<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS9iFbk451EODBCJyyFRilrQK0lrSG3l-AwYQ&usqp=CAU" style="width: 265px; height: 150px">
+							<div class="info">
+								<h4><a href="#">Bài viết mới nhất của chủ đề hướng dẫn wordpress</a></h4>
+								<div class="meta"><span>Ngày đăng: 19-07-2020</span></div>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, sapiente mollitia, dolore minus et eligendi quod perspiciatis placeat iure deleniti obcaecati blanditiis eius sit! Consectetur ullam praesentium deserunt ratione hic.</p>
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div class="news">
+							<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS9iFbk451EODBCJyyFRilrQK0lrSG3l-AwYQ&usqp=CAU" style="width: 265px; height: 150px">
+							<div class="info">
+								<h4><a href="#">Bài viết mới nhất của chủ đề hướng dẫn wordpress</a></h4>
+								<div class="meta"><span>Ngày đăng: 19-07-2020</span></div>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, sapiente mollitia, dolore minus et eligendi quod perspiciatis placeat iure deleniti obcaecati blanditiis eius sit! Consectetur ullam praesentium deserunt ratione hic.</p>
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div class="news">
+							<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS9iFbk451EODBCJyyFRilrQK0lrSG3l-AwYQ&usqp=CAU" style="width: 265px; height: 150px">
+							<div class="info">
+								<h4><a href="#">Bài viết mới nhất của chủ đề hướng dẫn wordpress</a></h4>
+								<div class="meta"><span>Ngày đăng: 19-07-2020</span></div>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, sapiente mollitia, dolore minus et eligendi quod perspiciatis placeat iure deleniti obcaecati blanditiis eius sit! Consectetur ullam praesentium deserunt ratione hic.</p>
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div class="news">
+							<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS9iFbk451EODBCJyyFRilrQK0lrSG3l-AwYQ&usqp=CAU" style="width: 265px; height: 150px">
+							<div class="info">
+								<h4><a href="#">Bài viết mới nhất của chủ đề hướng dẫn wordpress</a></h4>
+								<div class="meta"><span>Ngày đăng: 19-07-2020</span></div>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, sapiente mollitia, dolore minus et eligendi quod perspiciatis placeat iure deleniti obcaecati blanditiis eius sit! Consectetur ullam praesentium deserunt ratione hic.</p>
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div class="news">
+							<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS9iFbk451EODBCJyyFRilrQK0lrSG3l-AwYQ&usqp=CAU" style="width: 265px; height: 150px">
+							<div class="info">
+								<h4><a href="#">Bài viết mới nhất của chủ đề hướng dẫn wordpress</a></h4>
+								<div class="meta"><span>Ngày đăng: 19-07-2020</span></div>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, sapiente mollitia, dolore minus et eligendi quod perspiciatis placeat iure deleniti obcaecati blanditiis eius sit! Consectetur ullam praesentium deserunt ratione hic.</p>
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div class="news">
+							<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS9iFbk451EODBCJyyFRilrQK0lrSG3l-AwYQ&usqp=CAU" style="width: 265px; height: 150px">
+							<div class="info">
+								<h4><a href="#">Bài viết mới nhất của chủ đề hướng dẫn wordpress</a></h4>
+								<div class="meta"><span>Ngày đăng: 19-07-2020</span></div>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, sapiente mollitia, dolore minus et eligendi quod perspiciatis placeat iure deleniti obcaecati blanditiis eius sit! Consectetur ullam praesentium deserunt ratione hic.</p>
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div class="news">
+							<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS9iFbk451EODBCJyyFRilrQK0lrSG3l-AwYQ&usqp=CAU" style="width: 265px; height: 150px">
+							<div class="info">
+								<h4><a href="#">Bài viết mới nhất của chủ đề hướng dẫn wordpress</a></h4>
+								<div class="meta"><span>Ngày đăng: 19-07-2020</span></div>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, sapiente mollitia, dolore minus et eligendi quod perspiciatis placeat iure deleniti obcaecati blanditiis eius sit! Consectetur ullam praesentium deserunt ratione hic.</p>
+							</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+					<div class="nextpost">
+						<span>1</span>
+						<a href="#">2</a>
+						<a href="#">3</a>
+						<a href="#">...</a>
+						<a href="#">4</a>
+						<a href="#">5</a>
+						<a href="#">6</a>
+						<a href="#">Tiếp theo</a>
+					</div>
+				</div>
+			   </div>
+				<div class="right">
+					<div class="content-right">
+						<div class="cacmuc">
+							<h3>Chuyên mục</h3>
+							<div class="nd-cm">
+								<ul>
+									<li><a href="#"> Học wordpress</a><span>(152)</span></li>
+									<li><a href="#"> Học HTML</a><span>(52)</span></li>
+									<li><a href="#"> Học CSS</a><span>(15)</span></li>
+									<li><a href="#"> Học JQUERY</a><span>(7)</span></li>
+									<li><a href="#"> Học REACT NATIVE</a><span>(8)</span></li>
+									<li><a href="#"> Chủ đề khác</a><span>(10)</span></li>
+								</ul>
+							</div>
+						</div>
+						<div class="cacmuc">
+							<h3>Bài viết mới</h3>
+							<div class="nd-new">
+								<ul>
+									<li>
+										<img src="https://legeniedunet.com/wp-content/uploads/sites/2/2019/02/gt.jpg" style="width: 100px; height: 100px">
+										<h4><a href="#">7 kênh youtube học lập trình web tốt nhất thế giới giúp bạn nâng cao kỹ năng</a></h4>
+										<div class="meta"><span>Ngày đăng: 19-07-2020</span></div>
+										<div class="clear"></div>
+									</li>
+									<li>
+										<img src="https://legeniedunet.com/wp-content/uploads/sites/2/2019/02/gt.jpg" style="width: 100px; height: 100px">
+										<h4><a href="#">Học HTML & CSS, học front end thông qua dự án thực tế</a></h4>
+										<div class="meta"><span>Ngày đăng: 19-07-2020</span></div>
+										<div class="clear"></div>
+									</li>
+									<li>
+										<img src="https://legeniedunet.com/wp-content/uploads/sites/2/2019/02/gt.jpg" style="width: 100px; height: 100px">
+										<h4><a href="#">5 frameworks frontend miễn phí tốt nhất cho dự án web của bạn</a></h4>
+										<div class="meta"><span>Ngày đăng: 19-07-2020</span></div>
+										<div class="clear"></div>
+									</li>
+									<li>
+										<img src="https://legeniedunet.com/wp-content/uploads/sites/2/2019/02/gt.jpg" style="width: 100px; height: 100px">
+										<h4><a href="#">Những đoạn code hay dùng trong lập trình theme woocommecre wordpressg</a></h4>
+										<div class="meta"><span>Ngày đăng: 19-07-2020</span></div>
+										<div class="clear"></div>
+									</li>
+									<li>
+										<img src="https://legeniedunet.com/wp-content/uploads/sites/2/2019/02/gt.jpg" style="width: 100px; height: 100px">
+										<h4><a href="#">Share plugin get bài viết từ 10 trang báo nổi tiếng của Việt Nam</a></h4>
+										<div class="meta"><span>Ngày đăng: 19-07-2020</span></div>
+										<div class="clear"></div>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="cacmuc">
+							<h3>Bài viết xem nhiều</h3>
+							<div class="nd-xn">
+								<ul>
+									<li>
+										<span>1</span>
+										<h4><a href="#">Download file psd background chương trình, hội nghị</a></h4>
+										<div class="clear"></div>
+									</li>
+									<li>
+										<span>2</span>
+										<h4><a href="#">Download miễn phí phần mềm Adobe indesign CS4 & CS5</a></h4>
+										<div class="clear"></div>
+									</li>
+									<li>
+										<span>3</span>
+										<h4><a href="#">Du hí Quảng Nam – Làng bích họa – Tượng đài Mẹ Thứ</a></h4>
+										<div class="clear"></div>
+									</li>
+									<li>
+										<span>4</span>
+										<h4><a href="#">Du hí Quảng Nam – Thánh địa Mỹ Sơn</a></h4>
+										<div class="clear"></div>
+									</li>
+									<li>
+										<span>5</span>
+										<h4><a href="#">Share full code website tin tức sử dụng wordpress</a></h4>
+										<div class="clear"></div>
+									</li>
+									<li>
+										<span>6</span>
+										<h4><a href="#">Share full code web shop, web bán hàng sử dụng wordpress</a></h4>
+										<div class="clear"></div>
+									</li>
+									<li>
+										<span>7</span>
+										<h4><a href="#">Những câu hỏi thường gặp khi đi phỏng vấn lập trình php</a></h4>
+										<div class="clear"></div>
+									</li>
+									<li>
+										<span>8</span>
+										<h4><a href="#">10 đoạn code đếm ngược sử dụng script cực đẹp, miễn phí</a></h4>
+										<div class="clear"></div>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="cacmuc">
+							<h3>Quảng cáo</h3>
+							<div class="nd-qc">
+								<img src="https://lh3.googleusercontent.com/M2pXmS8ljxJ2-q4pmzaOIdCenfCEU-5IOLcKEF7pYjFIZgyDXqLySuVkS63Ag3RBISBYFv05RhhJQiKMAHIxm1XJoyulFUXSparfk0pfbZPuueiMnSXiNAQpbo7U6YuW5hd5zhEPUIfHKc9-SwqhdnzyTlNrNq2o_SzJRV_kY2MfLBLKjxJbjGoI2FD3q2SUbPiMI68al2ptOimqt24W-MLkOJr_NQgVPHbE0xJQbXZLoG48-6JtPXGyStLZMy8zsl0b68UP_PZDpP5KYZY8qe09P-XuroP-YbqBzY3z6V4N_sjXM4d6s4a8jK_q8u7Oj-mH0Ids-02CGRqLDJT6k3PENJLSD-PXpEdnbLuLVsvta4-Vh6BPXhDG_41RO340aGMWIaIekzI-dRK4cSpeeXYrO4fpJXXuE83uwu4MDZYBO3gB5fK7XIbEiTv3zNjLv5l3UV1ODLektzDl7_xsnzQQcflDbr5a2GaaKHLrrIc8v3Zw-Mq53hsxyzmmBRQq6yGt_jmnQPxf8uT7M8VuUchyOQ4wg9W24rrKu0JDGUgHy59HoM-YKAftAW_bB6Q6AyCSkQGAqevnI1XRLlfWjfk_kyuoIsMjZoUD96aI5xUIHm64--ZIailJTAhriU9k70m2kJnK6hK8O1VUmmSHY_bpi36TePGw3A18PumI91g-ntxz60o9CeghRYKUPA=w780-h943-no?authuser=0" style="width: 450px; height: 700px">
+							</div>
+						</div>
+						<div class="cacmuc">
+							<h3>Bạn bè</h3>
+							<div class="nd-bb">
+								<ul>
+									<li>
+										<a href="https://www.facebook.com/profile.php?id=100007098811732">Đỗ Xuân Hòa</a>
+									</li>
+									<li>
+										<a href="https://www.facebook.com/NguyenVanKhanh05">Nguyễn Văn Khánh</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="cacmuc">
+							<h3>Facebook</h3>
+							<div class="nd-fb">
+								<ul>
+									<li>
+										<a href="https://www.facebook.com/pham.tuananhyb"><img src="https://scontent.fhan2-3.fna.fbcdn.net/v/t1.0-9/106720725_1292632287600442_5489892746660886754_n.jpg?_nc_cat=109&_nc_sid=85a577&_nc_ohc=B5T3Nvc5X_oAX9P6a4N&_nc_ht=scontent.fhan2-3.fna&oh=8990ab221ecd1b0b062da03cc2fc0260&oe=5F3A033C" style="width: 380px; height: 380px"></a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			
+		</div>
+	</div>
+	<div class="footer">
+		<div class="container">
+			<div class="hang">
+				<div class="nd-footer">
+					<div class="me">
+						<h3>Về tôi</h3>
+						<p>Tốt nghiệp ĐH Công Nghệ GTVT, thích lập trình và thiết kê web, vì vậy tôi tạo ra trang web này để trao đổi kiến thức về lập trình và thiết kế web</p>
+						<a href="#" class="read">Xem thêm</a>
+					</div>
+					<div class="chuyenmuc">
+						<h3>Chuyên mục</h3>
+						<ul>
+							<li><a href="#">Lập trình</a></li>
+							<li><a href="#">Thiết kế web</a></li>
+							<li><a href="#">Học Wordpress</a></li>
+							<li><a href="#">Học HTMl & CSS</a></li>
+							<li><a href="#">Video Hướng dẫn</a></li>
+							<li><a href="#">Kiến thức khác</a></li>
+						</ul>
+					</div>
+					<div class="thongtin">
+						<h3>Liên hệ</h3>
+						<p>Địa chỉ: Nghĩa Tâm - Văn Chấn - Yên Bái</p>
+						<p>Điện thoại: 0384477797</p>
+						<p>Email: Princetuananh69@gmail.com</p>
+						<p>Facebook: https://www.facebook.com/pham.tuananhyb</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+    <div class="copyright">
+			<p>Bản quyền thuộc về Phạm Tuấn Anh</p>
+    </div>
+</div>
+</body>
+</html>
