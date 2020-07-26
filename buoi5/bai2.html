@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+	var diemkt = +window.prompt("nhập điểm kiểm tra: ");
+	var diemgk = +window.prompt("nhập điểm thi giữa kì: ");
+	var diemck = +window.prompt("nhập điểm thi cuối kì: ");
+
+
+	if (diemkt <0 || diemkt > 10 ) {
+		document.write("Sai giá trị nhập vào");
+	}
+	   else {
+	var dtb= (diemkt + diemgk + diemck)/3;
+		if (dtb>=9){
+			document.write("Điểm TB = "+dtb +" Đạt hạng A");
+		} else if(dtb>=7&&dtb<9) {
+			document.write("Điểm TB = "+dtb +" Đạt hạng B");
+		} else if (dtb>=5&&dtb<7) {
+			document.write("Điểm TB = "+dtb +" Đạt hạng C");
+		} else if (dtb<5) {
+			document.write("Điểm TB = "+dtb +" Đạt hạng F");
+		} else {
+			document.write("Dữ liệu nhập vào không hợp lệ");
+		}
+	}
+</script>
+</html>

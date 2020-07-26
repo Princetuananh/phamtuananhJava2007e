@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Bài 3-buổi 5</title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+	const phitb=1000;
+	var time = +(window.prompt("Nhập vào số phút gọi: "));
+    
+    if (time<0) {
+    	document.write("Sai dữ liệu nhập vào!!!");
+    }
+    else {
+	if (time <= 50) {
+		document.write("Phí thuê bao phải trả là: " +(phitb + time*600));
+	  } else if (time > 50 && time <= 200) {
+        document.write("Phí thuê bao phải trả là: " +(phitb + 50*600 + (time-50)*400));
+	  } else if (time > 200) {
+		document.write("Phí thuê bao phải trả là: " +(phitb + 50*600 + 150*400 + (time-200)*600));
+	  } else {
+		document.write("Dữ liệu nhập vào không hợp lệ!!!");
+	  }
+    }
+
+</script>
+</html>
