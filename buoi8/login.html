@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Form đăng nhập</title>
+</head>
+<style type="text/css">
+	main{
+    background-color: #6BCB4B;
+    min-height: 300px;
+    padding: 7.5px 15px;
+    }
+    .container{
+    width: 100%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    }
+    .login{
+    width: 100%;
+    max-width: 400px;
+    margin: 20px auto;
+    background-color: #ffffff;
+    padding: 15px;
+    border: 2px dotted #cccccc;
+    border-radius: 10px;
+    }
+    h1{
+    color: #009999;
+    font-size: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+    }
+    .box{
+    margin-bottom: 10px;
+    }
+    .box input{
+    padding: 8px 4px;
+    width: 100%;
+    border: 1px solid #cccccc;
+    outline: none;
+    }
+    .btn-box{
+    text-align: right;
+    margin-top: 10px;
+    }
+    .btn-box button{
+    padding: 8px 185px;
+    border-radius: 2px;
+    background-color: #04B431;
+    color: #ffffff;
+    border: none;
+    outline: none;
+    }
+    .bottom{
+    	text-align: center;
+    	color: grey;
+    }
+</style>
+<body>
+   <main>
+	<div class="container">
+		<div class="login">
+			<h1>Login to the website</h1>
+			<div class="box">
+				<i></i>
+				<input type="text" id="name" placeholder="username">
+			</div>
+			<div class="box">
+				<i></i>
+				<input type="password" id="pass" placeholder="password">
+			</div>
+			<div class="btn-box">
+				<button type="button" onclick="checklogin()">
+					LOGIN
+				</button>
+			</div>
+		</div>
+		<div class="bottom">
+			<td>Not registered?</td>  <a href="#">Create an account</a>
+		</div>
+	</div>
+   </main>
+   	
+
+</body>
+<script type="text/javascript">
+	function checklogin(){
+		var name = document.getElementById("name").value;
+		var pass = document.getElementById("pass").value;
+        if ( name == "tuananh" && pass == "12345678"){
+			document.write("Xin chào, bạn đã đăng nhập thành công ");
+     	}
+     	else{
+       		alert("Sai mật khẩu hoặc tên đăng nhập");
+       	}
+     	return false;
+
+	}
+	
+</script>
+</html>

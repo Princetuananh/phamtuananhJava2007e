@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Đồng hồ điện tử</title>
+</head>
+<style type="text/css">
+	#time{
+		margin: 30px auto;
+		width: 500px;
+		padding: 30px;
+		font-family: verdana;
+		font-size: 70px;
+		background-color: #6BCB4B;
+		color: white;
+		border-radius: 10px;
+		text-align: center;
+	}
+</style>
+<body>
+	<div id="time"></div>
+<script type="text/javascript">
+	function clock(){
+   var time = new Date();
+   var gio = time.getHours();
+   var phut = time.getMinutes();
+   var giay = time.getSeconds();
+   if(gio < 10) {
+       gio = "0" + gio;
+   }
+   if(phut < 10) {
+       phut = "0" + phut;
+   }
+   if(giay < 10) {
+       giay = "0" + giay;
+   }
+      document.getElementById("time").innerHTML = gio + ":" + phut + ":" + giay;
+      setTimeout("clock()",1000);
+   }
+   clock();
+   </script> 
+
+</body>
+
+
+</html>
